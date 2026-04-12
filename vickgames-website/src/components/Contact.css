@@ -1,0 +1,303 @@
+/* ========================================
+   CONTACT - Comic Contact Section
+   ======================================== */
+
+.contact {
+  position: relative;
+  padding: var(--space-2xl) 2rem;
+  background: var(--color-bg-dark);
+  overflow: hidden;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(57,255,20,0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.contact__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.contact__header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.contact__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-accent-green);
+  margin-bottom: var(--space-sm);
+  padding: 0.3rem 1rem;
+  border: 2px solid var(--color-accent-green);
+  border-radius: 30px;
+}
+
+.contact__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: 5px;
+  color: var(--color-text);
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+}
+
+.contact__title-accent {
+  color: var(--color-accent-green);
+  position: relative;
+}
+
+.contact__title-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  right: -5px;
+  height: 8px;
+  background: var(--color-secondary);
+  transform: skewX(-10deg);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.contact__subtitle {
+  font-family: var(--font-comic);
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 500px;
+  margin: 0.8rem auto 0;
+}
+
+/* Grid */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.contact--visible .contact__grid {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Info Cards */
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact__info-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: var(--color-bg-panel);
+  border: 3px solid var(--color-border);
+  padding: 1.2rem 1.5rem;
+  transition: all var(--transition-normal);
+}
+
+.contact__info-card:hover {
+  border-color: var(--color-accent-green);
+  transform: translateX(5px);
+  box-shadow: var(--shadow-comic-sm);
+}
+
+.contact__info-icon {
+  font-size: 2rem;
+  min-width: 45px;
+  text-align: center;
+  filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.3));
+}
+
+.contact__info-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+}
+
+.contact__info-card p {
+  font-family: var(--font-comic);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* Social Links */
+.contact__socials {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.contact__social-link {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.contact__social-link:hover {
+  border-color: var(--color-accent-green);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 4px 15px rgba(57,255,20,0.2);
+  background: rgba(57,255,20,0.1);
+}
+
+/* Comic Text Decoration */
+.contact__comic-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  font-family: var(--font-display);
+  letter-spacing: 4px;
+  opacity: 0.15;
+}
+
+.contact__comic-text span:first-child {
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+
+.contact__comic-text-big {
+  font-size: 3rem;
+  color: var(--color-accent-green);
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+  transform: rotate(-3deg);
+}
+
+/* Form */
+.contact__form {
+  background: var(--color-bg-panel);
+  border: 4px solid var(--color-border);
+  padding: 2rem;
+  box-shadow: var(--shadow-comic);
+  position: relative;
+}
+
+.contact__form::before {
+  content: '💬';
+  position: absolute;
+  top: -18px;
+  right: 20px;
+  font-size: 2rem;
+  filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.5));
+}
+
+.contact__form-group {
+  margin-bottom: 1.2rem;
+}
+
+.contact__form-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.contact__form-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--color-bg-card);
+  border: 3px solid var(--color-border);
+  color: var(--color-text);
+  font-family: var(--font-comic);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.contact__form-input:focus {
+  border-color: var(--color-accent-green);
+  box-shadow: 0 0 15px rgba(57,255,20,0.15);
+}
+
+.contact__form-input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.contact__form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact__form-btn {
+  width: 100%;
+  padding: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: var(--color-primary);
+  color: white;
+  border: 4px solid #111;
+  box-shadow: var(--shadow-comic);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  transform: rotate(-0.5deg);
+}
+
+.contact__form-btn:hover {
+  transform: rotate(0.5deg) translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-comic-lg);
+  background: #ff5555;
+}
+
+.contact__form-btn--sent {
+  background: var(--color-accent-green) !important;
+  color: var(--color-bg-dark) !important;
+  transform: scale(1.02);
+}
+
+/* Bottom Border */
+.contact__border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent-green), var(--color-secondary), var(--color-primary));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact__comic-text {
+    display: none;
+  }
+
+  .contact__form {
+    padding: 1.5rem;
+  }
+}

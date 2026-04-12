@@ -1,0 +1,245 @@
+/* ========================================
+   TEAM - Comic Character Cards
+   ======================================== */
+
+.team {
+  position: relative;
+  padding: var(--space-2xl) 2rem;
+  background: var(--color-bg-panel);
+  overflow: hidden;
+}
+
+.team::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(180,77,255,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+.team__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.team__header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.team__label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-accent-purple);
+  margin-bottom: var(--space-sm);
+  padding: 0.3rem 1rem;
+  border: 2px solid var(--color-accent-purple);
+  border-radius: 30px;
+}
+
+.team__title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: 5px;
+  color: var(--color-text);
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+}
+
+.team__title-accent {
+  color: var(--color-accent-purple);
+  position: relative;
+}
+
+.team__title-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  right: -5px;
+  height: 8px;
+  background: var(--color-accent-pink);
+  transform: skewX(-10deg);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.team__subtitle {
+  font-family: var(--font-comic);
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 500px;
+  margin: 0.8rem auto 0;
+}
+
+/* Team Grid */
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+/* Card */
+.team__card {
+  background: var(--color-bg-card);
+  border: 3px solid var(--color-border);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all var(--transition-normal);
+  transform: translateY(40px);
+  opacity: 0;
+  position: relative;
+}
+
+.team--visible .team__card {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: var(--delay);
+}
+
+.team__card:hover {
+  transform: translateY(-8px) rotate(-1deg);
+  border-color: var(--member-color);
+  box-shadow: 8px 8px 0px rgba(0,0,0,0.3), 0 0 20px color-mix(in srgb, var(--member-color) 20%, transparent);
+}
+
+/* Card Image */
+.team__card-image-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.team__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+  filter: contrast(1.1) saturate(1.1);
+}
+
+.team__card:hover .team__card-image {
+  transform: scale(1.1);
+}
+
+.team__card-image-border {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 4px solid var(--member-color);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.team__card:hover .team__card-image-border {
+  opacity: 1;
+}
+
+/* Corner Decorations */
+.team__card-corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 3px solid var(--member-color);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.team__card:hover .team__card-corner { opacity: 1; }
+
+.team__card-corner--tl { top: -3px; left: -3px; border-right: none; border-bottom: none; }
+.team__card-corner--tr { top: -3px; right: -3px; border-left: none; border-bottom: none; }
+.team__card-corner--bl { bottom: -3px; left: -3px; border-right: none; border-top: none; }
+.team__card-corner--br { bottom: -3px; right: -3px; border-left: none; border-top: none; }
+
+/* Card Info */
+.team__card-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: var(--color-text);
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+  margin-bottom: 0.3rem;
+}
+
+.team__card-role {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.team__card-desc {
+  font-family: var(--font-comic);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Social Links */
+.team__card-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+.team__card-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.team__card-social:hover {
+  color: var(--member-color);
+  border-color: var(--member-color);
+  transform: translateY(-3px) scale(1.1);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--member-color) 30%, transparent);
+}
+
+/* Bottom Border */
+.team__border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent-purple), var(--color-accent-pink), var(--color-secondary));
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .team__grid {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
