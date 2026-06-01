@@ -256,7 +256,12 @@ function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="hero__scroll-indicator">
+      <div 
+        className="hero__scroll-indicator" 
+        onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+        role="button"
+        tabIndex="0"
+      >
         <span>Scroll Down</span>
         <div className="hero__scroll-arrow">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

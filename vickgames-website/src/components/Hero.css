@@ -380,7 +380,24 @@
   padding: 0.6rem 1.2rem;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
   animation: scrollBounce 2s ease-in-out infinite;
-  cursor: default;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.hero__scroll-indicator:hover {
+  transform: rotate(357deg) scale(1.05);
+  opacity: 1;
+  animation: rgbRainbow 2s linear infinite;
+}
+
+@keyframes rgbRainbow {
+  0% { color: #ff3e3e; border-color: #ff3e3e; box-shadow: 4px 4px 0px rgba(255, 62, 62, 0.4); }
+  16% { color: #ff8a00; border-color: #ff8a00; box-shadow: 4px 4px 0px rgba(255, 138, 0, 0.4); }
+  33% { color: #ffd23f; border-color: #ffd23f; box-shadow: 4px 4px 0px rgba(255, 210, 63, 0.4); }
+  50% { color: #00d4ff; border-color: #00d4ff; box-shadow: 4px 4px 0px rgba(0, 212, 255, 0.4); }
+  66% { color: #b44dff; border-color: #b44dff; box-shadow: 4px 4px 0px rgba(180, 77, 255, 0.4); }
+  83% { color: #ff3e96; border-color: #ff3e96; box-shadow: 4px 4px 0px rgba(255, 62, 150, 0.4); }
+  100% { color: #ff3e3e; border-color: #ff3e3e; box-shadow: 4px 4px 0px rgba(255, 62, 62, 0.4); }
 }
 
 .hero__scroll-arrow {
@@ -411,6 +428,8 @@
     transform: translateY(8px);
   }
 }
+
+
 
 /* Panel Border */
 .hero__panel-border {
