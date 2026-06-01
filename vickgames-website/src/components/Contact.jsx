@@ -1,9 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
+
+// EmailJS Configuration
+emailjs.init('WEknOGRnh5VCCQ2fJ');
+
+const SERVICE_ID = 'service_k663len';
+const TEMPLATE_ID = 'template_63uqaij';
 
 function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -21,11 +29,24 @@ function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    setFormData({ name: '', email: '', message: '' });
+    setError('');
+
+    try {
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+        name: formData.name,
+        email: formData.email,
+        title: formData.message,
+      });
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch (err) {
+      setError('Failed to send message. Please try again.');
+      console.error('EmailJS Error:', err);
+    }
   };
 
   return (
@@ -150,6 +171,8 @@ function Contact() {
                 required
               ></textarea>
             </div>
+
+            {error && <div style={{ color: '#ff3e3e', marginBottom: '1rem', fontSize: '0.9rem' }}>{error}</div>}
 
             <button
               type="submit"

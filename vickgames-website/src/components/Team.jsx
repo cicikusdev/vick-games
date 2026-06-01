@@ -12,7 +12,7 @@ const teamData = [
     id: 1,
     name: 'Eren Çağrı (KoL) Özfidan',
     role: 'Co-Founder & Lead 3D Artist',
-    description: 'Reality is too high-poly, my eyes need a break.',
+    description: '"Reality is too high-poly, my eyes need a break."',
     image: team1,
     color: '#ff3e3e',
     social: {
@@ -48,7 +48,7 @@ const teamData = [
     id: 4,
     name: 'Osman Eren (Vader) Erginer',
     role: 'Co-Founder & Sound Designer/Composer',
-    description: 'placeholder',
+    description: '',
     image: team4,
     color: '#39ff14',
     social: {
@@ -60,7 +60,7 @@ const teamData = [
     id: 5,
     name: 'Ecem Çağla Özfidan',
     role: 'Unity Developer',
-    description: 'placeholder',
+    description: '"Just write something"',
     image: team5,
     color: '#ff8c00',
     social: {
