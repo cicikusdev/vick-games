@@ -249,7 +249,7 @@ function Hero() {
           </div>
           <div className="hero__stat-divider"></div>
           <div className="hero__stat">
-            <span className="hero__stat-number">4+</span>
+            <span className="hero__stat-number">12+</span>
             <span className="hero__stat-label">Months of asocialmaxxing</span>
           </div>
         </div>

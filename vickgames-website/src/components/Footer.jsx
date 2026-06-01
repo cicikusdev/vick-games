@@ -32,7 +32,7 @@ function Footer() {
           {/* Social */}
           <div className="footer__links-group">
             <h4 className="footer__links-title">Connect</h4>
-            <ul className="footer__links">
+            <ul className="footer__links footer__links--grid">
               <li><a href="https://store.steampowered.com/app/4537500/Beat_A_Boo/" target="_blank" rel="noopener noreferrer">Steam</a></li>
               <li><a href="https://www.instagram.com/beataboo.official" target="_blank" rel="noopener noreferrer">Instagram</a></li>
               <li><a href="https://x.com/beataboo_game" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>

@@ -220,6 +220,19 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 0;
+  }
+
+  .navbar__container {
+    padding: 0 1.5rem;
+  }
+
+  .navbar__logo {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+  }
+
   .navbar__burger {
     display: flex;
   }

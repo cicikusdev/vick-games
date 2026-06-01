@@ -12,7 +12,7 @@ const teamData = [
     id: 1,
     name: 'Eren Çağrı (KoL) Özfidan',
     role: 'Co-Founder & Lead 3D Artist',
-    description: 'placeholder',
+    description: 'Reality is too high-poly, my eyes need a break.',
     image: team1,
     color: '#ff3e3e',
     social: {
@@ -24,7 +24,7 @@ const teamData = [
     id: 2,
     name: 'Umay Ece (cicikus) Mantar',
     role: 'Co-Founder & Lead Unity Developer',
-    description: 'placeholder',
+    description: '"God is dead, so dare to know."',
     image: team2,
     color: '#b44dff',
     social: {
@@ -36,7 +36,7 @@ const teamData = [
     id: 3,
     name: 'Umut Berkay (Icarus) Yılmaz',
     role: 'Co-Founder & 3D Animator',
-    description: 'placeholder',
+    description: '"Praise the Fool"',
     image: team3,
     color: '#00d4ff',
     social: {
@@ -66,18 +66,6 @@ const teamData = [
     social: {
       linkedin: 'https://www.linkedin.com/in/ecem-%C3%A7a%C4%9Fla-%C3%B6zfidan-b2997637a/',
       steam: 'https://steamcommunity.com/profiles/76561199358359674'
-    },
-  },
-  {
-    id: 6,
-    name: 'Merve (reno) Erbaş',
-    role: '2D & UI/UX Artist',
-    description: 'placeholder',
-    image: team6,
-    color: '#ff69b4',
-    social: {
-      linkedin: 'https://www.linkedin.com/in/merve-erba%C8%99-5899a6368/',
-      steam: 'https://steamcommunity.com/profiles/76561199098486246'
     },
   },
 ];

@@ -9,7 +9,7 @@ const gamesData = [
     id: 1,
     title: 'Beat A Boo!',
     genre: 'Co-op Action',
-    description: 'An online co-op horror with a touch of music. Find evidences, face monsters, capture the damned, and survive at all costs.',
+    description: "An online co-op game blending horror with music. Run from vile creatures, destroy objects, and do the Devil's bidding.",    
     image: game1,
     color: '#9954e2ff',
     status: 'Coming Soon',

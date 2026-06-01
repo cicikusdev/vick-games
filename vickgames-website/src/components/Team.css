@@ -231,15 +231,136 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .team {
+    padding: var(--space-xl) 1.5rem;
+  }
+
   .team__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .team__card {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .team {
+    padding: var(--space-lg) 1.5rem;
+  }
+
+  .team__header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .team__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 3px;
+  }
+
+  .team__subtitle {
+    font-size: 1rem;
+  }
+
+  .team__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .team__card {
+    padding: 1.2rem;
+  }
+
+  .team__card-image-wrapper {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+  }
+
+  .team__card-name {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+
+  .team__card-role {
+    font-size: 0.75rem;
+  }
+
+  .team__card-desc {
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 560px) {
+  .team {
+    padding: var(--space-md) 1rem;
+  }
+
+  .team__header {
+    margin-bottom: var(--space-md);
+  }
+
+  .team__label {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.8rem;
+  }
+
+  .team__title {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    letter-spacing: 2px;
+  }
+
+  .team__subtitle {
+    font-size: 0.9rem;
+  }
+
   .team__grid {
     grid-template-columns: 1fr;
-    max-width: 350px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
+    gap: 1.2rem;
+  }
+
+  .team__card {
+    padding: 1rem;
+    border: 2px solid var(--color-border);
+  }
+
+  .team__card-image-wrapper {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.8rem;
+  }
+
+  .team__card-name {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .team__card-role {
+    font-size: 0.65rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .team__card-desc {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+  }
+
+  .team__card-socials {
+    gap: 0.4rem;
+  }
+
+  .team__card-social {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+
+  .team__card-corner {
+    width: 10px;
+    height: 10px;
   }
 }
