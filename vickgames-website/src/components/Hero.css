@@ -479,6 +479,10 @@
     max-width: 280px;
     justify-content: center;
   }
+
+  .hero__scroll-indicator {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {

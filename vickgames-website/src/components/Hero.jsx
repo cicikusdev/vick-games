@@ -244,7 +244,7 @@ function Hero() {
           </div>
           <div className="hero__stat-divider"></div>
           <div className="hero__stat">
-            <span className="hero__stat-number">6</span>
+            <span className="hero__stat-number">5</span>
             <span className="hero__stat-label">Team Members</span>
           </div>
           <div className="hero__stat-divider"></div>

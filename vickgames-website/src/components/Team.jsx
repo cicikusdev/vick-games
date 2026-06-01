@@ -59,7 +59,7 @@ const teamData = [
   {
     id: 5,
     name: 'Ecem Çağla Özfidan',
-    role: 'Unity Developer',
+    role: 'Co-Founder and Unity Developer',
     description: '"Just write something"',
     image: team5,
     color: '#ff8c00',
