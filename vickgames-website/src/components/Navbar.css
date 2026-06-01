@@ -241,6 +241,8 @@
     position: fixed;
     top: 0;
     right: -100%;
+    left: auto;
+    transform: none;
     width: 75%;
     max-width: 320px;
     height: 100vh;
@@ -252,6 +254,7 @@
     transition: right var(--transition-normal);
     border-left: 4px solid var(--color-primary);
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    border-radius: 0;
   }
 
   .navbar__links--open {
