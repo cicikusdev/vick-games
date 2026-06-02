@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, useEffect } from 'react';
+import { createContext, useState, useContext } from 'react';
 import { translations } from '../translations';
 
 const LanguageContext = createContext();
@@ -6,16 +6,8 @@ const LanguageContext = createContext();
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState('en');
 
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('vickgames_language');
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'tr')) {
-      setLanguage(savedLanguage);
-    }
-  }, []);
-
   const handleSetLanguage = (lang) => {
     setLanguage(lang);
-    localStorage.setItem('vickgames_language', lang);
   };
 
   const t = (section, key) => {

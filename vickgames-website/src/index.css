@@ -69,6 +69,28 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  font-size: 100%; /* Base 16px for large monitors */
+}
+
+/* Scale down UI by 10% on typical laptops and smaller desktops to match the 90% zoom look */
+@media (max-width: 1600px) {
+  html {
+    font-size: 90%; /* ~14.4px base */
+  }
+}
+
+/* Optional: Scale down slightly more on small laptops */
+@media (max-width: 1280px) {
+  html {
+    font-size: 85%; /* ~13.6px base */
+  }
+}
+
+/* Restore normal readability scale for mobile screens */
+@media (max-width: 768px) {
+  html {
+    font-size: 95%; /* ~15.2px base */
+  }
 }
 
 body {
