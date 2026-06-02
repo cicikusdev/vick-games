@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import game1 from '../assets/beataboo.png';
 import game2 from '../assets/abscinema.png';
 import game3 from '../assets/abscinema.png';
@@ -41,6 +42,7 @@ const gamesData = [
 ];
 
 function Games() {
+  const { t } = useLanguage();
   const [activeGame, setActiveGame] = useState(0);
   const sectionRef = useRef(null);
 
@@ -64,12 +66,12 @@ function Games() {
       <div className="games__container">
         {/* Header */}
         <div className="games__header">
-          <span className="games__label">// 02. WHAT WE BUILD</span>
+          <span className="games__label">{t('games', 'label')}</span>
           <h2 className="games__title">
-            Our <span className="games__title-accent">Games</span>
+            {t('games', 'title1')} <span className="games__title-accent">{t('games', 'title2')}</span>
           </h2>
           <p className="games__subtitle">
-            Each game is a new universe waiting to be explored and a new night to be passed sleeplessly. Here&apos;s what we&apos;re cooking.
+            {t('games', 'subtitle')}
           </p>
         </div>
 
@@ -87,8 +89,12 @@ function Games() {
               >
                 <span className="games__selector-number">{String(index + 1).padStart(2, '0')}</span>
                 <div className="games__selector-info">
-                  <span className="games__selector-title">{game.title}</span>
-                  <span className="games__selector-genre">{game.genre}</span>
+                  <span className="games__selector-title">
+                    {game.id === 1 ? 'Beat A Boo!' : t('games', 'game2Title')}
+                  </span>
+                  <span className="games__selector-genre">
+                    {game.id === 1 ? t('games', 'genreCoop') : t('games', 'genreIdea')}
+                  </span>
                 </div>
                 <span className="games__selector-arrow">→</span>
               </button>
@@ -108,23 +114,34 @@ function Games() {
                 className="games__display-status"
                 style={{ background: gamesData[activeGame].color }}
               >
-                {gamesData[activeGame].status}
+                {gamesData[activeGame].id === 1 ? t('games', 'statusComingSoon') : t('games', 'statusInDev')}
               </span>
             </div>
 
             <div className="games__display-info">
               <div className="games__display-genre-badge" style={{ borderColor: gamesData[activeGame].color, color: gamesData[activeGame].color }}>
-                {gamesData[activeGame].genre}
+                {gamesData[activeGame].id === 1 ? t('games', 'genreCoop') : t('games', 'genreIdea')}
               </div>
-              <h3 className="games__display-title">{gamesData[activeGame].title}</h3>
-              <p className="games__display-desc">{gamesData[activeGame].description}</p>
+              <h3 className="games__display-title">
+                {gamesData[activeGame].id === 1 ? 'Beat A Boo!' : t('games', 'game2Title')}
+              </h3>
+              <p className="games__display-desc">
+                {gamesData[activeGame].id === 1 ? t('games', 'game1Desc') : t('games', 'game2Desc')}
+              </p>
 
               <div className="games__display-tags">
-                {gamesData[activeGame].tags.map((tag) => (
-                  <span key={tag} className="games__display-tag" style={{ borderColor: gamesData[activeGame].color }}>
-                    {tag}
-                  </span>
-                ))}
+                {gamesData[activeGame].id === 1 ? (
+                  <>
+                    <span className="games__display-tag" style={{ borderColor: gamesData[activeGame].color }}>Action</span>
+                    <span className="games__display-tag" style={{ borderColor: gamesData[activeGame].color }}>Rhythm</span>
+                    <span className="games__display-tag" style={{ borderColor: gamesData[activeGame].color }}>Multiplayer</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="games__display-tag" style={{ borderColor: gamesData[activeGame].color }}>{t('games', 'genreIdea')}</span>
+                    <span className="games__display-tag" style={{ borderColor: gamesData[activeGame].color }}>{t('games', 'statusInDev')}</span>
+                  </>
+                )}
               </div>
 
               {gamesData[activeGame].steamUrl ? (
@@ -135,7 +152,7 @@ function Games() {
                   className="games__display-btn"
                   style={{ background: gamesData[activeGame].color }}
                 >
-                  Learn More →
+                  {t('games', 'learnMore')}
                 </a>
               ) : (
                 <button
@@ -143,7 +160,7 @@ function Games() {
                   style={{ background: gamesData[activeGame].color, opacity: 0.5, cursor: 'not-allowed' }}
                   disabled
                 >
-                  Coming Soon
+                  {t('games', 'comingSoonBtn')}
                 </button>
               )}
             </div>

@@ -25,7 +25,7 @@
 .navbar__container {
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,6 +42,7 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: transform var(--transition-fast);
+  flex: 1;
 }
 
 .navbar__logo:hover {
@@ -74,9 +75,7 @@
 .navbar__links {
   display: flex;
   align-items: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  justify-content: center;
   gap: 0.3rem;
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(12px);
@@ -84,6 +83,7 @@
   border: 2px solid rgba(255, 255, 255, 0.08);
   border-radius: 50px;
   padding: 0.3rem 0.5rem;
+  flex: 0 1 auto;
 }
 
 .navbar__link {
@@ -154,14 +154,20 @@
   display: none;
 }
 
-/* Social Icons */
+/* Right Controls & Socials */
+.navbar__right-controls {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+}
+
 .navbar__socials {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  margin-left: 0.8rem;
-  padding-left: 0.8rem;
-  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  gap: 0.3rem;
+  padding-right: 0.6rem;
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar__social {
@@ -179,6 +185,52 @@
   color: var(--color-secondary);
   transform: translateY(-2px) scale(1.15);
   background: rgba(255, 255, 255, 0.08);
+}
+
+/* Language Switcher */
+.navbar__lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: 0.6rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.2rem;
+  transition: all var(--transition-fast);
+  opacity: 0.4;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.lang-btn:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+  color: #fff;
+}
+
+.lang-btn.active {
+  opacity: 1;
+  transform: scale(1.05);
+  color: var(--color-primary);
+}
+
+.lang-flag {
+  border-radius: 2px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+.lang-divider {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
 }
 
 /* Burger */
@@ -272,5 +324,9 @@
 
   .navbar__socials {
     display: none;
+  }
+  
+  .navbar__lang-switch {
+    margin-right: 1.5rem;
   }
 }

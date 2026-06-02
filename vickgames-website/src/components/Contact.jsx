@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
 
@@ -9,6 +10,7 @@ const SERVICE_ID = 'service_k663len';
 const TEMPLATE_ID = 'template_63uqaij';
 
 function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
@@ -44,7 +46,7 @@ function Contact() {
       setFormData({ name: '', email: '', message: '' });
       setTimeout(() => setSubmitted(false), 4000);
     } catch (err) {
-      setError('Failed to send message. Please try again.');
+      setError(t('contact', 'error'));
       console.error('EmailJS Error:', err);
     }
   };
@@ -54,12 +56,12 @@ function Contact() {
       <div className="contact__container">
         {/* Header */}
         <div className="contact__header">
-          <span className="contact__label">// 04. GET IN TOUCH</span>
+          <span className="contact__label">{t('contact', 'label')}</span>
           <h2 className="contact__title">
-            Contact <span className="contact__title-accent">Us</span>
+            {t('contact', 'title1')} <span className="contact__title-accent">{t('contact', 'title2')}</span>
           </h2>
           <p className="contact__subtitle">
-            Got an idea? Want to collaborate? Or just want to say hi? Drop us a message!
+            {t('contact', 'subtitle')}
           </p>
         </div>
 
@@ -73,7 +75,7 @@ function Contact() {
                 </svg>
               </div>
               <div>
-                <h3>Email Us</h3>
+                <h3>{t('contact', 'emailUs')}</h3>
                 <p>vicktech.games@gmail.com</p>
               </div>
             </div>
@@ -85,7 +87,7 @@ function Contact() {
                 </svg>
               </div>
               <div>
-                <h3>HQ</h3>
+                <h3>{t('contact', 'hq')}</h3>
                 <p>Eskisehir, Turkey</p>
               </div>
             </div>
@@ -97,7 +99,7 @@ function Contact() {
                 </svg>
               </div>
               <div>
-                <h3>Follow Us</h3>
+                <h3>{t('contact', 'followUs')}</h3>
                 <div className="contact__socials">
                   <a href="https://store.steampowered.com/app/4537500/Beat_A_Boo/" target="_blank" rel="noopener noreferrer" className="contact__social-link" aria-label="Steam">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.985 1.308 1.215a2.253 2.253 0 0 0 2.824-1.086 2.253 2.253 0 0 0-.04-2.014 2.254 2.254 0 0 0-1.06-1.092 2.259 2.259 0 0 0-1.18-.312l1.525.631c.904.375 1.334 1.404.961 2.309s-1.404 1.334-2.309.961l-.556-.002zM18.791 8.912c0-1.66-1.354-3.012-3.012-3.012-1.662 0-3.012 1.351-3.012 3.012 0 1.66 1.35 3.012 3.012 3.012 1.658 0 3.012-1.351 3.012-3.012zm-5.024 0c0-1.108.897-2.012 2.012-2.012s2.012.904 2.012 2.012a2.016 2.016 0 0 1-2.012 2.012 2.016 2.016 0 0 1-2.012-2.012z" /></svg>
@@ -126,20 +128,20 @@ function Contact() {
 
             {/* Comic decoration */}
             <div className="contact__comic-text">
-              <span>JOIN THE</span>
-              <span className="contact__comic-text-big">ADVENTURE!</span>
+              <span>{t('contact', 'joinText1')}</span>
+              <span className="contact__comic-text-big">{t('contact', 'joinText2')}</span>
             </div>
           </div>
 
           {/* Right - Contact Form */}
           <form className="contact__form" onSubmit={handleSubmit}>
             <div className="contact__form-group">
-              <label htmlFor="contact-name" className="contact__form-label">Your Name</label>
+              <label htmlFor="contact-name" className="contact__form-label">{t('contact', 'nameLabel')}</label>
               <input
                 type="text"
                 id="contact-name"
                 className="contact__form-input"
-                placeholder="We demand your name..."
+                placeholder={t('contact', 'namePlaceholder')}
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
@@ -147,12 +149,12 @@ function Contact() {
             </div>
 
             <div className="contact__form-group">
-              <label htmlFor="contact-email" className="contact__form-label">Email</label>
+              <label htmlFor="contact-email" className="contact__form-label">{t('contact', 'emailLabel')}</label>
               <input
                 type="email"
                 id="contact-email"
                 className="contact__form-input"
-                placeholder="your@email.com"
+                placeholder={t('contact', 'emailPlaceholder')}
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
@@ -160,11 +162,11 @@ function Contact() {
             </div>
 
             <div className="contact__form-group">
-              <label htmlFor="contact-message" className="contact__form-label">Message</label>
+              <label htmlFor="contact-message" className="contact__form-label">{t('contact', 'messageLabel')}</label>
               <textarea
                 id="contact-message"
                 className="contact__form-input contact__form-textarea"
-                placeholder="What was it, our dearly beloved person?"
+                placeholder={t('contact', 'messagePlaceholder')}
                 rows="5"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -180,9 +182,9 @@ function Contact() {
               className={`contact__form-btn ${submitted ? 'contact__form-btn--sent' : ''}`}
             >
               {submitted ? (
-                <span>✓ Message Sent!</span>
+                <span>{t('contact', 'btnSent')}</span>
               ) : (
-                <span>I Would Like To Send A Message</span>
+                <span>{t('contact', 'btnDefault')}</span>
               )}
             </button>
           </form>

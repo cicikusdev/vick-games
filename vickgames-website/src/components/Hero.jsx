@@ -1,8 +1,10 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import heroBanner from '../assets/hero_banner_new2.png';
 import './Hero.css';
 
 function Hero() {
+  const { t } = useLanguage();
   const heroRef = useRef(null);
   const canvasRef = useRef(null);
   const mouseRef = useRef({ x: -1000, y: -1000 });
@@ -206,51 +208,50 @@ function Hero() {
 
       {/* Content */}
       <div className="hero__content">
+        {/* Comic speech bubble */}
         <div className="hero__speech-bubble">
-          <span>We are your friendly neighborhood indie devs.</span>
+          <p>{t('hero', 'speech')}</p>
+          <div className="hero__speech-tail"></div>
         </div>
 
         <h1 className="hero__title">
-          <span className="hero__title-line hero__title-line--1">We Create</span>
+          <span className="hero__title-line hero__title-line--1">{t('hero', 'titleLine1')}</span>
           <span className="hero__title-line hero__title-line--2">
-
-            <span className="hero__title-highlight"> Things</span>
+            <span className="hero__title-highlight">{t('hero', 'titleHighlight')}</span>
           </span>
         </h1>
 
         <p className="hero__subtitle">
-          An indie game studio trying to not to give your computer a burnout.
-          Our imagination meets with our blood, sweat, and tears.
-          It is mostly the tears.
+          {t('hero', 'subtitle')}
         </p>
 
         <div className="hero__actions">
           <button id="hero-explore-btn" className="hero__btn hero__btn--primary" onClick={scrollToGames}>
-            <span>Explore Our Games</span>
+            <span>{t('hero', 'exploreButton')}</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
               <path d="M7 17L17 7M17 7H7M17 7V17" />
             </svg>
           </button>
           <a href="#about" className="hero__btn hero__btn--outline">
-            <span>Our Story</span>
+            <span>{t('hero', 'storyButton')}</span>
           </a>
         </div>
 
         {/* Stats */}
         <div className="hero__stats">
           <div className="hero__stat">
-            <span className="hero__stat-number">1</span>
-            <span className="hero__stat-label">Game</span>
+            <span className="hero__stat-number">{t('hero', 'stat1Number')}</span>
+            <span className="hero__stat-label">{t('hero', 'stat1Label')}</span>
           </div>
           <div className="hero__stat-divider"></div>
           <div className="hero__stat">
-            <span className="hero__stat-number">5</span>
-            <span className="hero__stat-label">Team Members</span>
+            <span className="hero__stat-number">{t('hero', 'stat2Number')}</span>
+            <span className="hero__stat-label">{t('hero', 'stat2Label')}</span>
           </div>
           <div className="hero__stat-divider"></div>
           <div className="hero__stat">
-            <span className="hero__stat-number">12+</span>
-            <span className="hero__stat-label">Months of asocialmaxxing</span>
+            <span className="hero__stat-number">{t('hero', 'stat3Number')}</span>
+            <span className="hero__stat-label">{t('hero', 'stat3Label')}</span>
           </div>
         </div>
       </div>
@@ -262,7 +263,7 @@ function Hero() {
         role="button"
         tabIndex="0"
       >
-        <span>Scroll Down</span>
+        <span>{t('hero', 'scrollDown')}</span>
         <div className="hero__scroll-arrow">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M12 5v14M5 12l7 7 7-7" />

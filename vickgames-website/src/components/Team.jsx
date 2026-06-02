@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import team1 from '../assets/caripp.jpeg';
 import team2 from '../assets/benpp.jpeg';
 import team3 from '../assets/umutpp.jpeg';
@@ -71,6 +72,7 @@ const teamData = [
 ];
 
 function Team() {
+  const { t } = useLanguage();
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -93,12 +95,12 @@ function Team() {
       <div className="team__container">
         {/* Header */}
         <div className="team__header">
-          <span className="team__label">// 03. THE SQUAD</span>
+          <span className="team__label">{t('team', 'label')}</span>
           <h2 className="team__title">
-            Our <span className="team__title-accent">Team</span>
+            {t('team', 'title1')} <span className="team__title-accent">{t('team', 'title2')}</span>
           </h2>
           <p className="team__subtitle">
-            The heroes behind the scenes. A small team with massive ambitions.
+            {t('team', 'subtitle')}
           </p>
         </div>
 
@@ -127,9 +129,11 @@ function Team() {
               <div className="team__card-info">
                 <h3 className="team__card-name">{member.name}</h3>
                 <span className="team__card-role" style={{ color: member.color }}>
-                  {member.role}
+                  {t('team', `member${member.id}Role`)}
                 </span>
-                <p className="team__card-desc">{member.description}</p>
+                <p className="team__card-desc">
+                  {t('team', `member${member.id}Quote`)}
+                </p>
 
                 {/* Social Links */}
                 <div className="team__card-socials">
