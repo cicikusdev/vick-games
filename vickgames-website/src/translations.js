@@ -36,7 +36,7 @@ export const translations = {
       feature2Title: "Hedonism",
       feature2Text: "We are fundamentally selfish developers. If a gameplay loop doesn't immediately validate our existence and give our monkey brains a hit of dopamine, we delete the repository. Have I mentioned that we live for the kicks and giggles?",
       feature3Title: "Very Professional",
-      feature3Text: "We don't do synergy, HR, or corporate roadmaps -at least for now-. We are six students operating out of bedrooms. However, we occasionally use version control and our code only breaks most of the time. We are basically industry veterans at this point.",
+      feature3Text: "We don't do synergy, HR, or corporate roadmaps -at least for now-. We are five students operating out of bedrooms. However, we occasionally use version control and our code only breaks most of the time. We are basically industry veterans at this point.",
       feature4Title: "Community First",
       feature4Text: "We deeply value your feedback, mostly because we desperately need people to test our broken mechanics for free. If you pitch a genuinely brilliant idea on our Discord, we will absolutely steal it, put it in the game, and take all the credit for it. It's a symbiotic relationship. -We'll give you credit in the thank you part-"
     },

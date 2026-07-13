@@ -41,7 +41,7 @@ const teamData = [
     image: team3,
     color: '#00d4ff',
     social: {
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/umut-berkay-y%C4%B1lmaz-093034262/',
       steam: 'https://steamcommunity.com/profiles/76561199555414602'
     },
   },
