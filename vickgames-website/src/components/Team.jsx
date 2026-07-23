@@ -46,18 +46,6 @@ const teamData = [
     },
   },
   {
-    id: 4,
-    name: 'Osman Eren (Vader) Erginer',
-    role: 'Co-Founder & Sound Designer/Composer',
-    description: '',
-    image: team4,
-    color: '#39ff14',
-    social: {
-      linkedin: '#',
-      steam: 'https://steamcommunity.com/profiles/76561198229950916'
-    },
-  },
-  {
     id: 5,
     name: 'Ecem Çağla Özfidan',
     role: 'Co-Founder and Unity Developer',
