@@ -37,7 +37,7 @@ const teamData = [
     id: 3,
     name: 'Umut Berkay (Icarus) Yılmaz',
     role: 'Co-Founder & 3D Animator',
-    description: '"Praise the Fool"',
+    description: '"PROFESSIONAL RIGGER"',
     image: team3,
     color: '#00d4ff',
     social: {
