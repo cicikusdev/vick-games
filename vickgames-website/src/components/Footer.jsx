@@ -27,6 +27,7 @@ function Footer() {
               <li><a href="#about">About</a></li>
               <li><a href="#games">Games</a></li>
               <li><a href="#team">Team</a></li>
+              <li><a href="#community">Discord</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -40,7 +41,7 @@ function Footer() {
               <li><a href="https://x.com/beataboo_game" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
               <li><a href="https://www.tiktok.com/@beataboo_game" target="_blank" rel="noopener noreferrer">TikTok</a></li>
               <li><a href="https://www.reddit.com/r/BeatABoo/" target="_blank" rel="noopener noreferrer">Reddit</a></li>
-              <li><a href="https://discord.gg/TqTDGRKb" target="_blank" rel="noopener noreferrer">Discord</a></li>
+              <li><a href="https://discord.gg/ykfWGJctDV" target="_blank" rel="noopener noreferrer">Discord</a></li>
               <li><a href="https://www.youtube.com/@BeatABooGame" target="_blank" rel="noopener noreferrer">YouTube</a></li>
               <li><a href="https://github.com/cicikusdev" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>

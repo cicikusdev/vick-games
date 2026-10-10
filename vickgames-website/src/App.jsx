@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Games from './components/Games';
 import Team from './components/Team';
+import Community from './components/Community';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
@@ -31,6 +32,7 @@ function App() {
         <About />
         <Games />
         <Team />
+        <Community />
         <Contact />
       </main>
       <Footer />

@@ -71,8 +71,19 @@ export const translations = {
       member5Role: "Co-Founder and Unity Developer",
       member5Quote: "\"Just write something\""
     },
+    community: {
+      label: "// 04. HANG OUT WITH US",
+      title1: "Join Our ",
+      title2: "Discord",
+      subtitle: "Where the Beat A Boo! crowd lives. Come for the demo news, stay for watching us fix bugs in real time.",
+      perk1: "Find a squad for Beat A Boo! (it's 1-4 player co-op, friends sold separately)",
+      perk2: "Report bugs. We fix them. Eventually.",
+      perk3: "Hear about the demo and playtests before anyone else",
+      perk4: "Pitch ideas we will shamelessly steal (with credit, we promise)",
+      joinBtn: "Join the Server"
+    },
     contact: {
-      label: "// 04. GET IN TOUCH",
+      label: "// 05. GET IN TOUCH",
       title1: "Contact ",
       title2: "Us",
       subtitle: "Got an idea? Want to collaborate? Or just want to say hi? Drop us a message!",
@@ -176,8 +187,19 @@ export const translations = {
       member5Role: "Kurucu Ortak ve Unity Dev",
       member5Quote: "\"Oraya bi şeyler yazarsın işte\""
     },
+    community: {
+      label: "// 04. TAKILALIM",
+      title1: "Discord'umuza ",
+      title2: "Katıl",
+      subtitle: "Beat A Boo! ahalisinin takıldığı yer. Demo haberleri için gel, bug'ları canlı canlı düzeltişimizi izlemek için kal.",
+      perk1: "Beat A Boo! için ekip kur (1-4 kişilik co-op, arkadaşlar ayrıca satılır)",
+      perk2: "Bug bildir. Düzeltiyoruz. Er ya da geç.",
+      perk3: "Demo ve playtest haberlerini herkesten önce duy",
+      perk4: "Utanmadan çalacağımız fikirlerini anlat (adını yazacağız, söz)",
+      joinBtn: "Sunucuya Katıl"
+    },
     contact: {
-      label: "// 04. İLETİŞİME GEÇ",
+      label: "// 05. İLETİŞİME GEÇ",
       title1: "Bize ",
       title2: "Ulaşın",
       subtitle: "Fikrin mi var? veya bir iş birliği teklifi? Yoksa öylesine selam mı vereceksin? Bir mesaj uzağındayız!",
