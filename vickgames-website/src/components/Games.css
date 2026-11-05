@@ -300,6 +300,46 @@
   box-shadow: var(--shadow-comic);
 }
 
+/* Capsule art: show the full banner, keep the fade subtle so the logo stays readable */
+.games__display-image-wrapper--capsule .games__display-overlay {
+  background: linear-gradient(to top, var(--color-bg-panel) 0%, transparent 22%);
+}
+
+/* Trailer */
+.games__trailer {
+  margin-top: 2rem;
+}
+
+.games__trailer-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--game-color);
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+  margin-bottom: 0.8rem;
+}
+
+.games__trailer-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 3px solid #111;
+  outline: 2px solid var(--game-color);
+  box-shadow: var(--shadow-comic);
+  overflow: hidden;
+}
+
+.games__trailer-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* Comic Strip Decorative */
 .games__comic-strip {
   display: flex;
@@ -439,6 +479,25 @@
   .games__display-tag {
     font-size: 0.65rem;
     padding: 0.2rem 0.6rem;
+  }
+
+  .games__display-status {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+    top: 0.6rem;
+    right: 0.6rem;
+  }
+
+  .games__trailer {
+    margin-top: 1.5rem;
+  }
+
+  .games__trailer-label {
+    font-size: 1.1rem;
+  }
+
+  .games__trailer-frame {
+    box-shadow: var(--shadow-comic-sm);
   }
 
   .games__comic-strip {

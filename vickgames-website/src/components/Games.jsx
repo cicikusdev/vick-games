@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import game1 from '../assets/beataboo.png';
+import game1 from '../assets/beataboo-capsule-header.png';
 import game2 from '../assets/abscinema.png';
 import game3 from '../assets/abscinema.png';
 import './Games.css';
@@ -12,8 +12,10 @@ const gamesData = [
     genre: 'Co-op Action',
     description: "An online co-op game blending horror with music. Run from vile creatures, destroy objects, and do the Devil's bidding.",    
     image: game1,
+    imageAspect: '920 / 430',
+    trailerId: 'eWQwN8-ZinE',
     color: '#9954e2ff',
-    status: 'Coming Soon',
+    status: 'Free Demo Out Now',
     tags: ['Action', 'Rhythm', 'Multiplayer'],
     steamUrl: 'https://store.steampowered.com/app/4537500/Beat_A_Boo/',
   },
@@ -103,7 +105,10 @@ function Games() {
 
           {/* Active Game Display */}
           <div className="games__display" key={activeGame}>
-            <div className="games__display-image-wrapper">
+            <div
+              className={`games__display-image-wrapper ${gamesData[activeGame].imageAspect ? 'games__display-image-wrapper--capsule' : ''}`}
+              style={gamesData[activeGame].imageAspect ? { aspectRatio: gamesData[activeGame].imageAspect, height: 'auto' } : undefined}
+            >
               <img
                 src={gamesData[activeGame].image}
                 alt={gamesData[activeGame].title}
@@ -114,7 +119,7 @@ function Games() {
                 className="games__display-status"
                 style={{ background: gamesData[activeGame].color }}
               >
-                {gamesData[activeGame].id === 1 ? t('games', 'statusComingSoon') : t('games', 'statusInDev')}
+                {gamesData[activeGame].id === 1 ? t('games', 'statusDemoOut') : t('games', 'statusInDev')}
               </span>
             </div>
 
@@ -152,7 +157,7 @@ function Games() {
                   className="games__display-btn"
                   style={{ background: gamesData[activeGame].color }}
                 >
-                  {t('games', 'learnMore')}
+                  {gamesData[activeGame].id === 1 ? t('games', 'playDemo') : t('games', 'learnMore')}
                 </a>
               ) : (
                 <button
@@ -162,6 +167,22 @@ function Games() {
                 >
                   {t('games', 'comingSoonBtn')}
                 </button>
+              )}
+
+              {gamesData[activeGame].trailerId && (
+                <div className="games__trailer" style={{ '--game-color': gamesData[activeGame].color }}>
+                  <span className="games__trailer-label">▶ {t('games', 'trailerLabel')}</span>
+                  <div className="games__trailer-frame">
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${gamesData[activeGame].trailerId}?rel=0`}
+                      title={`${gamesData[activeGame].title} – ${t('games', 'trailerLabel')}`}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
               )}
             </div>
           </div>

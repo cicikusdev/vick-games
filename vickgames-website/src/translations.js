@@ -51,6 +51,9 @@ export const translations = {
       game2Title: "Idea In Development",
       game2Desc: "Who knows what this one will bring.",
       statusComingSoon: "Coming Soon",
+      statusDemoOut: "Free Demo Out Now!",
+      playDemo: "Play the Free Demo →",
+      trailerLabel: "Official Trailer",
       statusInDev: "In Development",
       genreCoop: "Co-op Action",
       genreIdea: "Idea"
@@ -167,6 +170,9 @@ export const translations = {
       game2Title: "Fikir Aşamasında",
       game2Desc: "Kim bilir bunda ne olacak.",
       statusComingSoon: "Çok Yakında",
+      statusDemoOut: "Ücretsiz Demo Çıktı!",
+      playDemo: "Ücretsiz Demoyu Oyna →",
+      trailerLabel: "Fragman",
       statusInDev: "Geliştirme Aşamasında",
       genreCoop: "Co-op Aksiyon",
       genreIdea: "Fikir"
